@@ -103,7 +103,7 @@ export function dijkstraSingleSource(graphAdj, allNodeIds, sourceId, targetId) {
         dist.set(v, alt);
         parent.set(v, { parentId: u, viaEdgeId: edgeId });
         heap.push({ dist: alt, id: v });
-        steps.push({ type: 'relax', nodeId: v, edgeId, oldDist, newDist: alt });
+        steps.push({ type: 'relax', nodeId: v, fromNodeId: u, edgeId, oldDist, newDist: alt });
       }
     }
 
